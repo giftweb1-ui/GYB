@@ -166,16 +166,20 @@ header{
     justify-content:space-between;
     align-items:center;
     background:#0D47A1;
-    padding:60px 8%;
+    padding:0 8%;
+    min-height:650px;
+    overflow:hidden;
 }
 
 .hero-text{
-    width:45%;
+    width:42%;
     color:white;
+    z-index:2;
 }
 
 .hero-image{
-    width:50%;
+    width:58%;
+    height:650px;
     display:flex;
     justify-content:center;
 }
@@ -183,8 +187,10 @@ header{
 .hero-image img{
     width:100%;
     max-width:500px;
-    height:auto;
+    height:100;
     border-radius:12px;
+    object-fit:cover;
+    display:block;
 }
 
 .hero-text h4{
