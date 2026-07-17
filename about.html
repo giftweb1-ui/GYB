@@ -153,6 +153,21 @@
 .slide.active{
     display:block;
 }
+        .gallery{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    margin:20px 0;
+}
+
+.gallery img{
+    width:320px;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 6px 15px rgba(0,0,0,.2);
+}
         </style>
     <body>
      <h2>About GYB</h2>
@@ -161,9 +176,24 @@
     Originally functioning as the Government Day Secondary School (GDSS) Adankolo, it was completely rebuilt and retrofitted into a premier educational facility to promote an educational revolution in Kogi State.
     <br>
 
-<div class="slider">
-    <img src="sideview.jpg" class="slide active">
-    <img src="upview.jpg" class="slide" onclick="openImage(1,'about')">
+<div class="gallery">
+
+<a href="sideview.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="sideview.jpg" alt="Library">
+
+</a>
+
+<a href="upview.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="upview.jpg" alt="Library">
+
+</a>
+
 </div>
 
         <h4>Background and Development Transformation:</h4> 
@@ -175,9 +205,24 @@
         <h4>Laboratories:</h4> Fully equipped, high-capacity science laboratories designed to rival those of major tertiary institutions.
    <br> 
 
-<div class="slider">
-    <img src="lab.jpg" class="slide active" onclick="openImage(this.src)">
-    <img src="computer.jpg" class="slide" onclick="openImage(this.src)">
+<div class="gallery">
+
+<a href="lab1.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="lab1.jpg" alt="Library">
+
+</a>
+
+<a href="computer.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="computer.jpg" alt="Library">
+
+</a>
+
 </div>
         
         <h4>Technology:</h4> A massive Computer-Based Test (CBT) center capable of sitting hundreds of students simultaneously.<br>
@@ -189,18 +234,54 @@
 Our modern library provides students with thousands of books, digital resources and quiet study spaces.
 </p>
 
-<div class="slider">
-    <img src="library1.jpg" class="slide active" onclick="openImage(0,'library')">
-    <img src="library2.jpg" class="slide" onclick="openImage(1,'library')">
+<div class="gallery">
+
+<a href="library1.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="library1.jpg" alt="Library">
+
+</a>
+
+<a href="library2.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="library2.jpg" alt="Library">
+
+</a>
+    
+<a href="basketball2.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="basketball2.jpg" alt="Library">
+
+</a>
 </div>
         
         <h4>Sports Complex: </h4> 
     Professional-grade courts for football, basketball, volleyball, and lawn tennis to encourage extracurricular development.
         
-   <div class="slider">
-    <img src="basketball1.jpg" class="slide active" onclick="openImage(0,'sports')">
-    <img src="basketball2.jpg" class="slide" onclick="openImage(1,'sports')">
-    <img src="football.jpg" class="slide" onclick="openImage(2,'sports')">
+   <div class="gallery">
+
+<a href="basketball1.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="basketball1.jpg" alt="Library">
+
+</a>
+
+<a href="football.jpg"
+   data-pswp-width="1600"
+   data-pswp-height="900">
+
+<img src="football.jpg" alt="Library">
+
+</a>
+
    </div>
         
         <h4>Recent History and Legacy Continued Support:</h4>
@@ -241,6 +322,16 @@ slides[current].classList.add("active");
 
 
         </script>
-        
+        <script type="module">
+import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe-lightbox.esm.min.js';
+
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '.gallery',
+  children: 'a',
+  pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.esm.min.js')
+});
+
+lightbox.init();
+    </script>
     </body>
 </html>
